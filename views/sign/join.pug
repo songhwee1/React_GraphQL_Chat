@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+    tbody 아이디
+    input#userid(type="text")
+    br
+    tbody 비밀번호
+    input#password(type="password")
+    br
+    tbody 이름
+    input#name(type="text")
+    br
+    button#send 회원가입
+    script(src="https://unpkg.com/axios/dist/axios.min.js")
+    script(src="/js/join.js")

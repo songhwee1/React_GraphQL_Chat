@@ -5,7 +5,7 @@ const mysql = require('../config/db');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  mysql.query('select * from notice', function(err, rows, fields) { // 쿼리문을 이용해 데이터를 가져온다.
+  mysql.query('select * from user', function(err, rows, fields) { // 쿼리문을 이용해 데이터를 가져온다.
     if(!err) { // 에러가 없다면
       res.send(rows); // rows 를 보내주자
     } else { // 에러가 있다면?
