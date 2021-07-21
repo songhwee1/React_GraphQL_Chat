@@ -15,11 +15,29 @@ type Chat {
 type Query {
   chatting: [Chat]!
 }
+type Mutation {
+  write(writer: String!, description: String!): String!
+}
+type Subscription {
+  newChat: Chat
+}
 `;
 const resolvers = {
   Query: {
     chatting: () => {
       return chattingLog;
+    }
+  },
+  Mutation: {
+    write: (_, { writer, description }) => {
+      const id = chattingLog.length;
+      const newChat = {
+        id,
+        writer,
+        description
+      };
+    chattingLog.push(newChat);
+    return "YES";
     }
   }
 };
