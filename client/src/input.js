@@ -15,12 +15,13 @@ const Input = () => {
     setWriter(writer);
   }, []);
   const [description, setDescription] = useState("");
-  const mutation = useMutation(write, {
+  const [mutation] = useMutation(write, {
     variables: {
       writer,
       description
     }
   });
+
   return (
     <div>
       <input
